@@ -34,6 +34,10 @@ catagory
 
        <form method="post" action="{{route('subcatagory.update')}}">
         @csrf
+
+ <input type="hidden" name="id" value="{{$subcat->id}}" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" }}>
+
+        
         <div class="form-group">
           <label for="exampleFormControlSelect1">Catagory name</label>
           <select name="Catagory_id" class="form-control" id="exampleFormControlSelect1" }}>
@@ -47,8 +51,7 @@ catagory
         <div class="form-group">
           <label for="exampleFormControlInput1">Catagory name</label>
           <input type="text" name="Subcatagory" value="{{$subcat->Subcatagory}}" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" }}>
-          <input type="hidden" name="id" value="{{$subcat->id}}" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" }}>
-
+         
         </div>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Status</label>

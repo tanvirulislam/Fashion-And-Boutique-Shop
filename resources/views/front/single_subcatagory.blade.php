@@ -34,14 +34,35 @@
 									</div>
 									
 								</div>
-								<h3><a href="#">{{$catagory_product->productname}}</a></h3>
+								<h3>{{$catagory_product->productname}}</h3>
 								<div class="pricing">
 									<p class="price"><span>BDT. {{$catagory_product->price}}</span></p>
 								</div>
 								<p class="bottom-area d-flex px-3">
-									<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+									<a href="" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
 									<a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>
 								</p>
+
+								{{-- add to cart start--}}
+								<div class="input-group col-md-6 d-flex mb-3">
+
+									<form action="{{ route('cart.store') }}" method="POST">
+										{{ csrf_field() }}
+										<input type="hidden" value="{{ $catagory_product->id }}" id="id" name="id">
+										<input type="hidden" value="{{ $catagory_product->productname }}" id="name" name="name">
+										<input type="hidden" value="{{ $catagory_product->price }}" id="price" name="price">
+										<input type="hidden" value="{{ $catagory_product->picture }}" id="img" name="img">
+
+										<strong>Quantity</strong>
+										<input type="text" id="quantity" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+										<br>
+										<button class="btn btn-primary btn-sm" style="color: black" class="tooltip-test" title="add to cart" >
+											<i class="fa fa-shopping-cart"></i> add to cart
+										</button>
+
+									</form>
+								</div>
+								{{-- cart end --}}
 							</div>
 						</div>
 					</div>

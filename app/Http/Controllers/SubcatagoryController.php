@@ -60,23 +60,9 @@ class SubcatagoryController extends Controller
           return redirect('/subcatagory')->with('message','Registered succesfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Subcatagory  $subcatagory
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Subcatagory $subcatagory)
-    {
-        //
-    }
+   
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Subcatagory  $subcatagory
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit($id)
     {
         $catagories=Catagory::all();
@@ -84,13 +70,7 @@ class SubcatagoryController extends Controller
         return view('admin.subcatagory.edit',['subcat'=>$subcatagory, 'cat'=>$catagories]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Subcatagory  $subcatagory
-     * @return \Illuminate\Http\Response
-     */
+   
     public function update(Request $request)
     {
        DB::table('subcatagories')->where('id', $request->id)->update([

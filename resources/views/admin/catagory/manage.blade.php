@@ -37,7 +37,6 @@ catagory
      <div class="card-body">
       <table class="table table-bordered">
         <thead>
-
           <tr>
             <th scope="col">id</th>
             <th scope="col">Catagory name</th>
@@ -45,6 +44,7 @@ catagory
             <th scope="col">Action</th>
           </tr>
         </thead>
+        
         <tbody >
 
           @php($i=1)

@@ -50,6 +50,7 @@ product
             <th scope="col">Price</th>
             <th scope="col">Status</th>
             <th scope="col">Action</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody >
@@ -97,12 +98,14 @@ product
             </td>
 
             <td>
+              <a href="{{ route('product.edit',$product_var->id) }}" type="button" class="btn btn-info text-light"><i class="fas fa-edit"></i></a>
+            </td>
+            
+            <td>
               <button  type="button" class="btn btn-danger text-light" onclick="deleteTag({{ $product_var->id }})"><i class="fas fa-trash-alt"></i></button>
               <form id="delete-form-{{ $product_var->id }}" action="{{ route('product.delete',$product_var->id) }}" method="POST" style="display: none;">
                 @csrf
-              </form>
-              <a href="{{ route('product.edit',$product_var->id) }}" type="button" class="btn btn-info text-light"><i class="fas fa-edit"></i></a>
-
+              </form>             
             </td>
           </tr>
           @endforeach
